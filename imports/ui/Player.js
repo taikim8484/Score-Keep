@@ -7,16 +7,16 @@ class Player extends Component {
   };
   handleIncrease = _id => {
     const { score } = Players.findOne({ _id });
-    Players.update({ _id }, { score: score + 1 });
+    Players.update({ _id }, { $set: { score: score + 1 } });
   };
   handleDecrease = _id => {
     const { score } = Players.findOne({ _id });
-    score > 0 && Players.update({ _id }, { score: score - 1 });
+    score > 0 && Players.update({ _id }, { $set: { score: score - 1 } });
   };
   render() {
     const { player } = this.props;
     return (
-      <p key={player._id}>
+      <p>
         Player {player.name} has {player.score} points
         <button onClick={() => this.handleDecrease(player._id)}> - 1 </button>
         <button onClick={() => this.handleIncrease(player._id)}> + 1 </button>
