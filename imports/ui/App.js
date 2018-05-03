@@ -10,8 +10,10 @@ class App extends Component {
     return (
       <div>
         <TitleBar title="Welcome to Score Keeper" />
-        <AddPlayer />
-        <PlayerList players={players} />
+        <div className="wrapper">
+          <AddPlayer />
+          <PlayerList players={players} />
+        </div>
       </div>
     );
   }

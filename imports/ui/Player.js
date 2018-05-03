@@ -16,12 +16,12 @@ class Player extends Component {
   render() {
     const { player } = this.props;
     return (
-      <p>
+      <div className="item">
         Player {player.name} has {player.score} points
-        <button onClick={() => this.handleDecrease(player._id)}> - 1 </button>
-        <button onClick={() => this.handleIncrease(player._id)}> + 1 </button>
-        <button onClick={() => this.handleRemove(player._id)}> X </button>
-      </p>
+        <button className="button button--round" onClick={() => this.handleDecrease(player._id)}> - </button>
+        <button className="button button--round" onClick={() => this.handleIncrease(player._id)}> + </button>
+        <button className="button button--round" onClick={() => this.handleRemove(player._id)}> X </button>
+      </div>
     );
   }
 }
